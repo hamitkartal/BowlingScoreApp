@@ -11,6 +11,24 @@ Usage:
 
 import re
 
+
+"""
+Suggestion #5: Seperation of concerns
+Below EmailValidator class has two functions:
+1) validate()
+2) normalize()
+
+However, opposite to what introduced in class name,
+the class performs two different kind of operations,
+validating and normalizing. Instead of this design,
+it is better to seperate the concerns about the
+email: EmailNormalizer and EmailValidator.
+This approach would provide us convenience and more
+control over the classes and their responsibilities
+in future. Beside of EmailNormalizer and EmailValidator,
+Email class might also be appropriate as mentioned in the
+suggestion #4.
+"""
 class EmailValidator:
   
   """
