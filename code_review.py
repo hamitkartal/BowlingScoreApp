@@ -47,6 +47,20 @@ class EmailValidator:
       return False  
     return True
 
+
+  """
+  Suggestion #3: Single Responsibility Principle
+  normalize() function returns the normalized version of the parameter email
+  as expected.
+  However, it does perform more than one operation on the email parameter. It
+  is also very obvious from the inline comments:
+    # remove leading...
+    # remove dots...
+    # convert domain...
+  Instead of performing three operations in a single function, those can be
+  migrated to another function. This migration would cause codes to be easier
+  to test and apply the S of SOLID principles. 
+  """
   def normalize(self, email):
     """Normalizes an email address."""
     # remove leading/trailing whitespace
