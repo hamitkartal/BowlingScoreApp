@@ -14,7 +14,7 @@ import re
 class EmailValidator:
   
   """
-  Suggestion #1
+  Suggestion #1: robustness & corrrectness
   in validate() function, email validation process
   is done according to some developer-defined conditions
   such as ('@' should be in email), or (local part length
@@ -27,6 +27,17 @@ class EmailValidator:
   """
   def validate(self, email):
     """Validates an email address."""
+    
+    """
+    Suggestion #2: consistency
+    All validation conditions (the dev came up with) is returning
+    True or False.
+    However, first if-statement checks if parameter email is a string.
+    If it's not a string, then it raises an Exception unlike the rest
+    of the code. This might mislead of confuse the client code.
+    Instead of raising an Error, it can return False since a non-string
+    email parameter is also not a valid email.
+    """
     if not isinstance(email, str):
       raise ValueError("Email must be a string")
     if "@" not in email:
