@@ -77,6 +77,19 @@ class EmailValidator:
 if __name__ == "__main__":
   validator = EmailValidator()
   
+  """
+  Suggestion #4: Object-oriented approach / OCP
+  It is better to handle below email string literals 
+  as Email objects. This approach would provide us
+  convenience and simplicity especially in future, as
+  the project grows. One possible object-oriented approach
+  would be making an Email dataclass as it would store the
+  email value. Upon that point, child classes or related
+  classes will be easier. We will have more control over the
+  classes and apply the Open-Closed Principle easier, thanks
+  to the encapsulation.
+  """
+
   emails = [
     "alice@example.com",
     "bob.smith@example.com",
